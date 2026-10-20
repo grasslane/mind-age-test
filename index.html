@@ -375,7 +375,7 @@ function renderQuestion(){
   $("qTitle").textContent=q.q;
   const wrap=$("qWrap");
   wrap.classList.remove("q-enter"); void wrap.offsetWidth; wrap.classList.add("q-enter");
-  $("options").innerHTML=q.o.map((o,i)=>`<button class="opt" data-i="${i}">${escapeText(o[0])}</button>`).join("");
+  $("options").innerHTML=q.o.map((o,i)=>`<button class="opt" data-i="${i}">${escapeText(o)}</button>`).join("");
   document.querySelectorAll(".opt").forEach(btn=>btn.addEventListener("click",()=>{
     const i=+btn.dataset.i;
     document.querySelectorAll(".opt").forEach(x=>x.classList.remove("selected"));
